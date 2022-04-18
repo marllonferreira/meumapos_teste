@@ -205,10 +205,10 @@
                                             <input class="span12 money" id="valorTotal" name="valorTotal" type="text" data-affixes-stay="true" data-thousands="" data-decimal="." name="valor" value="<?php echo number_format($totals + $total, 2, '.', ''); ?>" readonly />
                                         </div>
                                     </div>
-                                    <div class="span3">
+                                    <div class="span4">
                                         <input type="hidden" name="idOs" id="idOs" value="<?php echo $result->idOs; ?>" />
                                         <label for="">Desconto</label>
-                                        <input style="width: 4em;" id="desconto" name="desconto" type="text" placeholder="%" maxlength="6" size="2" />
+                                        <input style="width: 6em;" id="desconto" name="desconto" type="text" class="money" placeholder="R$"  size="2"/>
                                         <strong><span style="color: red" id="errorAlert"></span></strong>
                                     </div>
                                     <div class="span2">
@@ -558,7 +558,7 @@
 <script type="text/javascript">
     function calcDesconto(valor, desconto) {
 
-        var resultado = (valor - desconto * valor / 100).toFixed(2);
+        var resultado = (valor - desconto).toFixed(2);
         return resultado;
     }
 
@@ -579,14 +579,19 @@
         this.value = this.value.replace(/[^0-9.]/g, '');
     });
 
-    $("#desconto").keyup(function() {
 
-        this.value = this.value.replace(/[^0-9.]/g, '');
-        if ($('#desconto').val() > 100) {
-            $('#errorAlert').text('Desconto não pode ser maior de 100%.').css("display", "inline").fadeOut(5000);
-            $('#desconto').val('');
+    $("#desconto").keyup(function() {
+     this.value = this.value.replace(/[^0-9.]/g, '');
+        
+    let ValorTotal = parseFloat(document.getElementById('valorTotal').value); 
+    let desconto = parseFloat(document.getElementById('desconto').value); 
+
+        if (desconto > ValorTotal) {
+            $('#errorAlert').text('Desconto não pode ser maior que o valor total.').css("display", "inline").fadeOut(5000);
+             $('#desconto').val('');
             $("#desconto").focus();
         }
+      
         if ($("#valorTotal").val() == null || $("#valorTotal").val() == '') {
             $('#errorAlert').text('Valor não pode ser apagado.').css("display", "inline").fadeOut(5000);
             $('#desconto').val('');
