@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '52289bae478c9cacafe0d87ed325c9b29c5cba6d',
         'name' => '__root__',
         'dev' => false,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '52289bae478c9cacafe0d87ed325c9b29c5cba6d',
             'dev_requirement' => false,
         ),
         'chillerlan/php-qrcode' => array(
@@ -121,12 +121,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/persistence' => array(
-            'pretty_version' => '2.4.1',
-            'version' => '2.4.1.0',
+            'pretty_version' => '2.5.0',
+            'version' => '2.5.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/persistence',
             'aliases' => array(),
-            'reference' => '092a52b71410ac1795287bb5135704ef07d18dd0',
+            'reference' => 'f8776dd9a0bdcd838812951a75f4ada72065a82a',
             'dev_requirement' => false,
         ),
         'filp/whoops' => array(
